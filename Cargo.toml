@@ -2,6 +2,12 @@
 name = "perfect-merkle-forest"
 version = "0.1.0"
 edition = "2021"
+authors = ["Andunië", "andunie@cassis.cash"]
+description = "an implementation of a forest of perfectly-balanced merkle trees"
+repository = "https://github.com/andunieee/perfect-merkle-forest"
+license = "MIT"
+keywords = []
+categories = ["cryptography"]
 
 [dependencies]
 bitcoin_hashes = "0.14.0"

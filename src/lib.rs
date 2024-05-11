@@ -1,3 +1,20 @@
+//! A simple implementation of a merkle forest with perfectly balanced trees.
+//! This library should not be used for anything practical, it is provided
+//! just as a reference.
+//!
+//! There can be up to 256 levels of trees and up to 256 trees.
+//! When the first tree has 4 levels there can be at most 4 total trees, then
+//! the trees get merged into a single tree with 5 levels and so on.
+//! A tree of n levels contains 2^n entries.
+//!
+//! You can only add entries, never remove or change them.
+//!
+//! The actual entries added are not kept by this library, only their hashes.
+//! A merkle proof is returned for every added entry, together with the index
+//! of the tree they belong to. That merkle proof is only valid at that point.
+//! As new entries are added the proofs will be invalidated as the entries will
+//! be rearranged in the trees.
+
 use bitcoin_hashes::{sha256, Hash};
 
 pub struct Forest {
